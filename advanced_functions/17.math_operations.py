@@ -6,21 +6,22 @@ def math_operations(*args, **kwargs):
         for key, value in kwargs.items():
             if index == 0:
                 kwargs['a'] += nums
-                index += 1
-                break
+
             elif index == 1:
                 kwargs['s'] -= nums
-                index += 1
-                break
+
             elif index == 2:
                 if nums != 0:
                     kwargs['d'] /= nums
-                index += 1
-                break
+
             elif index == 3:
                 kwargs['m'] *= nums
+
+            if index == 3:
                 index = 0
-                break
+            else:
+                index += 1
+            break
 
     for key, value in sorted(kwargs.items(), key=lambda kvp: (-kvp[1], kvp[0])):
         result += f"{key}: {value:.1f}\n"
