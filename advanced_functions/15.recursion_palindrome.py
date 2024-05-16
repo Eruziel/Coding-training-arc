@@ -6,5 +6,6 @@ def palindrome(word, index):
 
     return palindrome(word, index + 1)
 
+
 print(palindrome("abcba", 0))
 print(palindrome("peter", 0))
